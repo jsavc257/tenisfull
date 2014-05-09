@@ -12,15 +12,14 @@ $(document).on("pagecreate",function(event){
     {
 
     $(document).on("pagecreate","#inicio",function(event){
-		$("#indica3").text("TIENDA");	
-    	$("#indica4").text("Mr. X ");
+		$("#indica3").text("DESCUENTOS SIEMPRE");	
+    	
 		 });
     }
     else
     {
     $(document).on("pagecreate","#inicio",function(event){
-	$("#indica3").text("MR. X");	
-    	$("#indica4").text("SU MEJOR OPCIÓN");
+	 	$("#indica4").text("SU MEJOR OPCIÓN");
 		 
 });
     }
