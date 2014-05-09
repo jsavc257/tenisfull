@@ -1,7 +1,8 @@
 // JavaScript Document
 $(document).on("pagecreate",function(event){
   $(window).on("orientationchange",function(event){
-    alert("Orientation changed to: " + event.orientation);
+  //  alert("Orientation changed to: " + event.orientation);
+     alert("Para un mejor uso de la aplicación cambie de vertical a horizontal su dispositivo");
   });                     
 });
 
@@ -10,16 +11,17 @@ $(document).on("pagecreate",function(event){
     if(window.orientation == 0)
     {
 
-    $(document).on("pagecreate",function(event){
-	$("#nametienda").color("blue")	
-    alert("Para un mejor uso de la aplicación cambie la posición de su               dispositivo de vertical a horizontal!!!");
+    $(document).on("pagecreate","#inicio",function(event){
+		$("#indica3").text("TIENDA");	
+    	$("#indica4").text("Mr. X ");
 		 });
     }
     else
     {
     $(document).on("pagecreate",function(event){
-	$("#nametienda").color("red")	
-    alert("Para un mejor uso de la aplicación cambie la posición de su               dispositivo de vertical a horizontal!!!");
+	$("#indica3").text("MR. X");	
+    	$("#indica4").text("SU MEJOR OPCIÓN");
+		 
 });
     }
   });                   
