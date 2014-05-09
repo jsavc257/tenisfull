@@ -1,8 +1,7 @@
 // JavaScript Document
 $(document).on("pagecreate",function(event){
   $(window).on("orientationchange",function(event){
-  //  alert("Orientation changed to: " + event.orientation);
-     alert("Para un mejor uso de la aplicación cambie de vertical a horizontal su dispositivo");
+    alert("Orientation changed to: " + event.orientation);
   });                     
 });
 
@@ -10,19 +9,11 @@ $(document).on("pagecreate",function(event){
   $(window).on("orientationchange",function(){
     if(window.orientation == 0)
     {
-
-    $(document).on("pagecreate","#inicio",function(event){
-		$("#indica3").text("DESCUENTOS SIEMPRE");	
-    	
-		 });
+      $("#indica3").text("LOS MEJORES PRECIOS").css({"background-color":"yellow","font-size":"35%"});
     }
     else
     {
-    $(document).on("pagecreate","#inicio",function(event){
-	 	$("#indica4").text("SU MEJOR OPCIÓN");
-		 
-});
+      $("#indica4").text("GRACIAS POR TU VISITA").css({"background-color":"pink","font-size":"40%"});
     }
   });                   
 });
-
