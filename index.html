@@ -18,27 +18,6 @@
 <script src="funciones3.js" type="text/javascript">
 </script>
 
-<script>
-$(document).on("pagecreate",function(event){
-  $(window).on("orientationchange",function(event){
-    alert("Orientation changed to: " + event.orientation);
-  });                     
-});
-
-$(document).on("pagecreate",function(event){
-  $(window).on("orientationchange",function(){
-    if(window.orientation == 0)
-    {
-      $("p").text("SU PANTALLA ESTA EN VERTICAL PARA MEJOR USO DE LA APLICACIÓN GIRE SU PANTALLA A HORIZONTAL").css({"background-color":"yellow","font-size":"300%"});
-    }
-    else
-    {
-      $("p").text("AHORA SU PANTALLA ESTA EN HORIZONTAL ").css({"background-color":"pink","font-size":"200%"});
-    }
-  });                   
-});
-</script>
-
 
 </head> 
 <body> 
