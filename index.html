@@ -1,0 +1,772 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tienda virtual</title>
+
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+<script src="funciones.js" type="text/javascript">
+</script>
+<script src="funciones2.js" type="text/javascript">
+</script>
+<script src="funciones3.js" type="text/javascript">
+</script>
+
+<script>
+$(document).on("pagecreate",function(event){
+  $(window).on("orientationchange",function(event){
+    alert("Orientation changed to: " + event.orientation);
+  });                     
+});
+
+$(document).on("pagecreate",function(event){
+  $(window).on("orientationchange",function(){
+    if(window.orientation == 0)
+    {
+      $("p").text("SU PANTALLA ESTA EN VERTICAL PARA MEJOR USO DE LA APLICACIÓN GIRE SU PANTALLA A HORIZONTAL").css({"background-color":"yellow","font-size":"300%"});
+    }
+    else
+    {
+      $("p").text("AHORA SU PANTALLA ESTA EN HORIZONTAL ").css({"background-color":"pink","font-size":"200%"});
+    }
+  });                   
+});
+</script>
+
+
+</head> 
+<body> 
+
+<!--pagina principal-->
+<div data-role="page" id="inicio" data-theme="b" >
+
+<div data-role="panel" id="mipanel">
+<h2>MENU SECUNDARIO</h2>
+   <a href="#jordan" class="ui-btn">Jordan</a>
+   <a href="#adidas" class="ui-btn">Adidas </a>
+   <a href="#nike" class="ui-btn"> Nike</a>
+   <a href="#clientes" class="ui-btn"> Directorio de Clientes</a>
+   <a href="#registro" class="ui-btn"> Registro de Clientes</a>
+</div>
+
+	<div data-role="header" data-position="fixed" data-fullscreen="true">
+		<h1>Tenis MR. "X"</h1>
+	</div>
+    
+	<div data-role="content" >	
+		<ul data-role="listview" data-inset="true">
+            <li data-role="list-divider" role="heading" > Menu Principal </li>
+			<li><a href="#nike" data-transition="pop">NIKE</a></li>
+            <li><a href="#jordan" data-transition="slideup">AIR JORDAN</a></li>
+			<li><a href="#adidas" data-transition="flip">ADIDAS</a></li>
+            <li id="doblemenu">IZQUIERDA>OFERTAS || DERECHA>NUEVOS PRODUCTOS</li>
+		</ul>		
+<div data-role="content" align="justify" >
+<div align="center">
+<img src="imagenes/Captura3.PNG", width="200" height="200" > <br>
+</div>
+
+<p> Quiénes somos? <br>
+ <br>
+
+Tienda MR. "X" nació en el 2014 abriendo la primera tienda virtual para dispositivos moviles en venta de calzado deportivo en Rafael Lara Grajales, Puebla.
+
+Nuestros valores
+
+    Honestidad
+    Compromiso
+    Excelencia
+    Innovación </p>
+    <br>
+    
+   <p> Los zapatos tenis, que en un principio fueron elaborados para competiciones deportivas, son, hoy en día el otro calzado del mundo. Quizás el setenta por ciento de los habitantes del planeta los utiliza más que el calzado de cuero y piel. </p>
+   
+   
+    <a href="#mypop1" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all"> E-mail </a>
+    
+    <div data-role="popup" id="mypop1">
+    <p> jsavc@yahoo.com</p>
+    </div>
+    
+    <a href="#myPopup2" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">Facebook</a>
+
+<div data-role="popup" id="myPopup2">
+  <p>tiendamrX@facebook.com</p>
+</div>
+
+
+ <a href="#clientes" class="ui-btn ui-btn-inline ui-corner-all">Lista de Clientes</a> </p>
+   
+   <a href="#loginpp" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Iniciar sesión</a>
+
+    <div data-role="popup" id="loginpp" class="ui-content" style="min-width:250px;">
+      <form id="form_account" method="post">
+        <div>
+          <h3>Información de acceso</h3>
+          <label for="usrnm" class="ui-hidden-accessible">Nombre de usuario:</label>
+          <input type="text" name="user" id="usrnm" placeholder="Usuario">
+          <label for="pswd" class="ui-hidden-accessible">Contraseña:</label>
+          <input type="password" name="passw" id="pswd" placeholder="Contraseña">
+          <label for="log">Mantener conectado</label>
+          <input type="checkbox" name="login" id="log" value="1" data-mini="true">
+          <!--<input type="submit" data-inline="true" value="Iniciar sesion">-->
+          <input type="submit" name="enviar" data-inline="true" value="Iniciar sesion" id="create_account" />
+          <input type="reset" data-inline="true" value="Limpiar campos">
+        </div>
+      </form>
+    </div>
+     
+     <p>Catalogo de nuestras principales marcas</p>
+   <a href="#mipanel" class="ui-btn ui-corner-all ui-shadow">MENU SECUNDARIO</a>
+  
+</div>
+        <div data-role="content">
+        	<div data-role="collapsible-set">
+            	<div data-role="collapsible" data-collapsed="true">
+                <h1> Buscanos en Gran Parte del Pais</h1> <br>
+               <a href="#mymapa" data-rel="popup" data-position-to="window">
+<img src="imagenes/mapa.PNG" alt="Skaret View" style="width:100px;"></a>
+
+<div data-role="popup" id="mymapa">
+      <p>Localiza una de nuestras tiendas en los siguientes estados. </p> 
+      <a href="#inicio" data-direction="reverse" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="imagenes/mapa.PNG" style="width:800px;height:500px;" alt="Skaret View">
+    </div>
+                
+                </div>
+            
+	        </div>
+        </div>
+        
+        
+        
+        
+	</div>
+	<div data-role="footer" data-position="fixed" data-fullscreen="true">
+       <div data-role="navbar" data-iconpos="top">
+       		<ul>
+             	<li>
+                	<a href="#inicio" data-transition="slide" data-icon="home">
+                    Inicio
+                    </a>
+                </li>
+                <li>
+                	<a href="#ayuda" data-transition="slide" data-icon="info">
+                   Ayuda
+                    </a>
+                </li>
+                <li>
+                	<a href="#contacto" data-transition="slide" data-icon="alert">
+                    CONTACTO
+                    </a>
+                </li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+
+
+
+
+<!-- pagina de registro de clientes -->
+<div data-role="page" id="registro" data-theme="b">
+	<div data-role="header">
+     <a href="index.html" data-role="button" data-direction="reverse"
+data-icon="back" data-iconpos="left">Back</a>
+		<h1>Registro de Clientes</h1>
+	</div>
+	<div data-role="content" align="center">	 
+    <img src="imagenes/registrologo.PNG" width="150" height="150"> <br>
+	
+    <form id="form_registro" method="post">
+      <p>Formulario de Registro</p>
+      
+    
+   <div class="ui-field-contain">
+      <label for="nombre">Nombre(s):</label>
+      <input type="text" name="nombre" id="nombre" data-clear-btn="true">
+      <label for="apellidos">Apellidos:</label>
+      <input type="text" name="apellidos" id="apellidos" data-clear-btn="true">
+      <label for="fecha">F. Nacimiento </label>
+      <input type="date" name="fecha" id="fecha">
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" id="email" placeholder="Tu email..">
+    </div>
+    
+    <div class="ui-field-contain">
+    <fieldset data-role="controlgroup">
+      <legend>Selecciona tu ocupación:</legend>
+      <label for="Estudiante">Estudiante</label>
+      <input type="radio" name="ocupacion" id="Estudiante" value="Estudiante">
+      <label for="Docente">Docente</label>
+      <input type="radio" name="ocupacion" id="Docente" value="Docente">
+      <label for="Empleado">Empleado</label>
+      <input type="radio" name="ocupacion" id="Empleado" value="Empleado">	
+      </fieldset>
+
+    </div>
+    
+       <div class="ui-field-contain">
+         <fieldset data-role="controlgroup">
+        <legend>¿Qué calificación merece nuestro servicio?:</legend>
+          <label for="diez">10 Excelente</label>
+          <input type="checkbox" name="calif" id="diez" value="10">
+          <label for="seis">6 Regular</label>
+          <input type="checkbox" name="calif" id="seis" value="6">
+          <label for="cero">0 Mala</label>
+          <input type="checkbox" name="calif" id="cero" value="0">	
+      </fieldset>
+
+
+    </div>
+      
+      <div class="ui-field-contain">
+               <fieldset class="ui-field-contain">
+        <label for="day">Seleccione su marca de tenis favorita</label>
+        <select name="day" id="day">
+          <option value="nike">Nike</option>
+          <option value="jordan">Air Jordan</option>
+          <option value="adidas">Adidas</option>
+          <option value="rebook">Rebook</option>
+          <option value="and1">And 1</option>
+          <option value="converse">Converse</option>
+          <option value="pirma">Pirma Brasil</option>
+        </select>
+      </fieldset>
+    </div>
+      
+   <div class="ui-field-contain">
+        <label for="info">Agrege un comentario a cerca de lo que agregaria a nuestro sitio:</label>
+        <textarea name="addinfo" id="info"></textarea>
+    </div>   
+      
+      <div data-role="fieldcontain">
+			<!--<input type="submit" data-inline="true" name="submit" value="Enviar" />-->
+            <input type="submit" name="enviar" data-inline="true" value="Enviar" id="simula_envio" />
+                      <input type="reset" data-inline="true" value="Limpiar campos">
+	  </div>
+     
+         
+    </form>
+    
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar" data-iconpos="top">
+       		<ul>
+             	<li>
+                	<a href="#inicio" data-transition="slide" data-icon="home">
+                    Inicio
+                    </a>
+                </li>
+                <li>
+                	<a href="#ayuda" data-transition="slide" data-icon="info">
+                   Ayuda
+                    </a>
+                </li>
+                <li>
+                	<a href="#contacto" data-transition="slide" data-icon="alert">
+                    CONTACTO
+                    </a>
+                </li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+<!-- pagina de OFERTAS -->
+<div data-role="page" id="ofertas">
+  	<div data-role="header">
+ 	 	<a href="index.html" data-role="button" data-direction="reverse"
+		data-icon="back" data-iconpos="left">Back</a>
+    	<h1>Ofertas</h1>
+  </div>
+  
+  <div data-role="content"><center><p>REBAJAS DEL 35%-40%-50%</p></center>
+  
+  <img src="imagenes/ofertas.jpg" width="570" height="380"> </div>
+  
+  
+  
+</div>
+
+<!-- TERMINA PAGINA de OFERTAS -->
+
+
+<!-- pagina de clientes -->
+<div data-role="page" id="clientes" data-theme="b">
+	<div data-role="header">
+      <a href="index.html" data-role="button" data-direction="reverse"
+data-icon="back" data-iconpos="left">Back</a>
+		<h1>Información de clientes</h1>
+	</div>
+	<div data-role="content" align="center">	 
+    <img src="imagenes/contacto.PNG" width="150" height="150"> <br>
+	<table data-role="table" data-mode="columntoggle" class="ui-responsive" id="myTable">
+  <thead>
+    <tr>
+      <th data-priority="6">IDClientes</th>
+      <th>Nombre legal</th>
+      <th data-priority="1">Nombre del representante</th>
+      <th data-priority="2">Domicilio</th>
+      <th data-priority="3">Ciudad</th>
+      <th data-priority="4">E-mail</th>
+      <th data-priority="5">Pais</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Zapaterias Guadalajara</td>
+      <td>Armando tazos</td>
+      <td>12 poniente # 15</td>
+      <td>Puebla</td>
+      <td>mrjuan123@gmail.com</td>
+      <td>México</td>
+    </tr>
+    <tr>
+          <td>2</td>
+          <td>Zapateria 3 Hermanos</td>
+          <td>Juan Perez</td>
+          <td>5 de mayo #2312</td>
+          <td>Puebla</td>
+          <td>jony-guapo56@yahoo.com.mx</td>
+          <td>Mexico</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Zapaterias Pirma Brasil</td>
+          <td>Tifon de souza</td>
+          <td>120 copacabana #25.</td>
+          <td>copacabana</td>
+          <td>tfion_bra13@hotmail.com</td>
+          <td>Brasil</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Tenis Monterrey S.A.</td>
+          <td>Pedro Flores</td>
+          <td>Avenida la fragua #45</td>
+          <td>Monterrey</td>
+          <td>peter67parker@hotmail.com</td>
+          <td>México</td>
+        </tr>
+    
+    
+  </tbody>
+</table>
+
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar" data-iconpos="top">
+       		<ul>
+             	<li>
+                	<a href="#inicio" data-transition="slide" data-icon="home">
+                    Inicio
+                    </a>
+                </li>
+                <li>
+                	<a href="#ayuda" data-transition="slide" data-icon="info">
+                   Ayuda
+                    </a>
+                </li>
+                <li>
+                	<a href="#contacto" data-transition="slide" data-icon="alert">
+                    CONTACTO
+                    </a>
+                </li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+<!--pagina de nike-->
+<div data-role="page" id="nike" data-theme="b">
+	<div data-role="header" data-position="fixed">
+    <a href="index.html" data-role="button" data-direction="reverse"
+data-icon="back" data-iconpos="left">Back</a>
+		<h1>Catalogo NIKE</h1>
+	</div>
+	<div data-role="content" align="center">	
+        
+    <a href="#mynike" data-rel="popup" data-position-to="window">
+<img src="imagenes/Captura2.PNG" alt="Skaret View" style="width:100px;"></a>
+
+<div data-role="popup" id="mynike">
+      <p>Este es el modelo NIKE ZOOM!!!!!</p> 
+      <a href="#nike" data-direction="reverse" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="imagenes/Captura2.PNG" style="width:800px;height:500px;" alt="Skaret View">
+    </div>
+    
+    <br>
+	ZOOM BORN READY <br>
+    PRECIO DE $ 1,499.00	<br>
+    CÓDIGO: 610229101 <br>
+	</div>
+    <p>La historia de Nike, la mayor marca de ropa de deporte americana, es bastante curiosa. Phil Knight era un norteamericano aficionado al deporte que estaba vinculado a la Universidad de Oregon. Phil Knight era licenciado en empresas y viajó a Japón a finales de los años 50 con el objetivo de conseguir una entrevista con la firma de zapatillas de deporte Tiger, de Onitsuka, una de las grandes firmas de Japón.
+Allí se hizo pasar por representante de una importante distribuidora de calzado americana interesada en comercializar su producto al otro lado del océano. Phil Knight llegó a un acuerdo y de esta manera nacía la empresa germen de Nike: Blue Ribbon Sports.
+
+Blue Ribbon Sports consiguió vender las zapatillas japonesas Tiger en Oregon.
+
+A mediados de los años 60 Knight decide cambiar de nombre a la empresa, pasándose a llamar Nike. Nike significa victoria en griego. En esta época se une a Nike Bill Bowerman, entrenador en la Universidad de Oregon. Bowerman se encargaba de los diseños de las zapatillas Nike.
+
+En 1971 Nike encarga el diseño de un logo a la estudiante, Caroline Davidson naciendo así Swoosh. Que hoy en día es reconocido en todo el mundo. Como dato curioso, destacar que Caroline recibió por el diseño de Swoosh $35. 35 dolares por una de las marcas más conocidas del mundo! Afortunadamente, 12 años después la invitaron a una cena sorpresa donde le dieron un anillo con el símbolo de la empresa y un diamante engarzado, más un porcentaje en acciones de Nike.</p>
+    
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar" data-iconpos="top">
+       		<ul>
+             	<li>
+                	<a href="#inicio" data-transition="slide" data-icon="home">
+                    Inicio
+                    </a>
+                </li>
+                <li>
+                	<a href="#ayuda" data-transition="slide" data-icon="info">
+                   Ayuda
+                    </a>
+                </li>
+                <li>
+                	<a href="#contacto" data-transition="slide" data-icon="alert">
+                    CONTACTO
+                    </a>
+                </li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+<!--pagina de jordan-->
+<div data-role="page" id="jordan" data-theme="b">
+	<div data-role="header" inline>
+     <a href="index.html" data-role="button" data-direction="reverse"
+data-icon="back" data-iconpos="left">Back</a>
+		<h1>Catalogo JORDAN</h1>
+	</div>
+    <div data-role="content" align="center">	
+    
+    
+	<a href="#myjordan" data-rel="popup" data-position-to="window">
+<img src="imagenes/Captura1.PNG" alt="Skaret View" style="width:100px;"></a>
+
+<div data-role="popup" id="myjordan">
+      <p>Este es el modelo JORDAN RETRO 6!!!!!</p> 
+      <a href="#jordan" data-direction="reverse" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="imagenes/Captura1.PNG" style="width:800px;height:500px;" alt="Skaret View">
+    </div>
+    
+    
+     <br>
+    
+	JORDAN RETRO 6 <br>
+    PRECIO DE $ 1,650.00	<br>
+    CÓDIGO: 38242498		<br>
+	</div>
+    <p>  HISTORY JORDAN XXIII
+Air Jordan (XXIII)
+El Air Jordan (XXIII) se dice que es el último modelo de la serie Air Jordan por muchos individuos con alto contenido de Jordan Brand , incluyendo el jefe de marketing de calzado, Gentry Humphrey. Aunque había un montón de celebración por el aniversario 20 años de Aire Jordan , hay mucha expectación por la Air Jordan (XXIII) .
+En cuanto al rendimiento, el Air Jordan (XXIII) se dice que es por encima y más allá de la de cualquier otro Air Jordan. Por tercer año consecutivo, el Air Jordan (XXIII) utiliza IPS (Suspensión Independiente Palmiro) Amortiguación. Para obtener asistencia, una placa de fibra de carbono se extiende a lo largo de la parte inferior de la suela que modela de impresión del pulgar de Michael Jordan.
+Estéticamente, el zapato es único, como cualquier otro modelo de Jordan con respecto al resto del campo. Comenzando en el dedo del pie, la puntera tiene la firma de Michael Jordan en relieve. El lado del zapato tiene un diseño de cosido que da la fuerza zapatos además de efecto cosmético. La lengüeta de la izquierda y derecha son diferentes para una primera vez con un Jumpman en el zapato derecho y "23" en el lado izquierdo. Por último lo que comienza en la parte delantera de la zapata y se extiende en toda la longitud es un panel brillante brillante que cubre el cuerpo entresuela de la zapatilla.</p>
+    
+	<div data-role="footer" inline >
+    <!--	<div data-role="footer" inline data-position="fixed">-->
+	<div data-role="navbar" data-iconpos="top">
+       		<ul>
+             	<li>
+                	<a href="#inicio" data-transition="slide" data-icon="home">
+                    Inicio
+                    </a>
+                </li>
+                <li>
+                	<a href="#ayuda" data-transition="slide" data-icon="info">
+                   Ayuda
+                    </a>
+                </li>
+                <li>
+                	<a href="#contacto" data-transition="slide" data-icon="alert">
+                    CONTACTO
+                    </a>
+                </li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+<!--pagina de adidas-->
+<div data-role="page" id="adidas" data-theme="b">
+	<div data-role="header">
+     <a href="index.html" data-role="button" data-direction="reverse"
+data-icon="back" data-iconpos="left">Back</a>
+		<h1>Catalogo ADIDAS</h1>
+	</div>
+    
+    <div data-role="content" align="center">	
+	<a href="#myadidas" data-rel="popup" data-position-to="window">
+<img src="imagenes/Captura66.PNG" alt="Skaret View" style="width:100px;"></a>
+
+<div data-role="popup" id="myadidas">
+      <p>Este es el modelo ADIDAS ROSE!!!!!</p> 
+      <a href="#adidas" data-direction="reverse" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="imagenes/Captura66.PNG" style="width:800px;height:500px;" alt="Skaret View">
+    </div>
+    
+     <br>
+	ADIZERO <br>
+    PRECIO DE $ 14650.00	<br>
+    CÓDIGO: 38212398			<br>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar" data-iconpos="top">
+       		<ul>
+             	<li>
+                	<a href="#inicio" data-transition="slide" data-icon="home">
+                    Inicio
+                    </a>
+                </li>
+                <li>
+                	<a href="#ayuda" data-transition="slide" data-icon="info">
+                   Ayuda
+                    </a>
+                </li>
+                <li>
+                	<a href="#contacto" data-transition="slide" data-icon="alert">
+                    CONTACTO
+                    </a>
+                </li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+<!--pagina de contacto-->
+<div data-role="page" id="contacto" data-theme="b">
+	<div data-role="header">
+      <a href="index.html" data-role="button" data-direction="reverse"
+data-icon="back" data-iconpos="left">Back</a>
+		<h1>Información de Contacto</h1>
+	</div>
+	<div data-role="content" align="center">	 
+    <img src="imagenes/contacto.PNG" width="150" height="150"> <br>
+	<table width="616" border="1">
+  <tr>
+    <td width="154">3 Sur numero 11, colonia del espanto Puebla, pue. cp 72810</td>
+    <td width="183">contacto-misterx@gmail.com</td>
+    <td width="97">01 800 55 77 987</td>
+    <td width="69">siguenos en Facebook: misterx-tenis</td>
+  </tr>
+</table>
+
+    <div class="ui-grid-b ui-responsive">
+      <div class="ui-block-a">
+        <a href="#pue" class="ui-btn ui-corner-all ui-shadow">Puebla</a><br>
+        <span>Tienda Puebla Calle 5 de mayo #124</span>
+      </div>
+      <div class="ui-block-b">
+        <a href="#tlax" class="ui-btn ui-corner-all ui-shadow">Tlaxcala</a><br>
+        <span>Tienda Tlaxcala Juarez Norte #455</span>
+      </div>
+      <div class="ui-block-c">
+        <a href="#mex" class="ui-btn ui-corner-all ui-shadow">México</a><br>
+        <span>Tienda México Fuentes del pedregal #11</span>
+      </div>
+    </div>
+
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar" data-iconpos="top">
+       		<ul>
+             	<li>
+                	<a href="#inicio" data-transition="slide" data-icon="home">
+                    Inicio
+                    </a>
+                </li>
+                <li>
+                	<a href="#ayuda" data-transition="slide" data-icon="info">
+                   Ayuda
+                    </a>
+                </li>
+                <li>
+                	<a href="#contacto" data-transition="slide" data-icon="alert">
+                    CONTACTO
+                    </a>
+                </li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+
+
+<!--pagina de asesoria-->
+<div data-role="page" data-dialog="true" id="asesoria" data-theme="b" >
+
+<div data-role="header">
+
+      <h1>Ventana de chat</h1>
+  </div>
+	<div data-role="content" align="center">	 
+    <img src="imagenes/ayuda.PNG" width="100" height="100" > <br>
+	CUAL ES SU DUDA  <br>
+   EN UN MOMENTO LO ATENDEMOS<br>
+
+  </div>
+  <a href="#inicio">PRINCIPAL</a>
+	
+</div>
+
+
+
+<!--pagina de tienda puebla-->
+
+<div data-role="page" data-dialog="true" id="pue" data-theme="b">
+
+<div data-role="header">
+      <h1>Foto de Tienda</h1>
+  </div>
+
+   <div data-role="content" align="center">	 
+      <img src="imagenes/tienda1.PNG" width="100" height="100" > <br>
+      Fachada de nuestra tienda  <br>
+      En la cidudad de puebla<br>
+   </div>
+
+     <a href="#contacto">Contacto</a>
+	
+</div>
+
+<!--pagina de tienda tlaxcala-->
+
+<div data-role="page" data-dialog="true" id="tlax" data-theme="b">
+
+<div data-role="header">
+      <h1>Foto de Tienda</h1>
+  </div>
+
+   <div data-role="content" align="center">	 
+      <img src="imagenes/tienda2.PNG" width="100" height="100" > <br>
+      Fachada de nuestra tienda  <br>
+      En la cidudad de puebla<br>
+   </div>
+
+     <a href="#contacto">Contacto</a>
+	
+</div>
+
+<!--pagina de tienda mexico-->
+
+<div data-role="page" data-dialog="true" id="mex" data-theme="b">
+
+<div data-role="header">
+      <h1>Foto de Tienda</h1>
+  </div>
+
+   <div data-role="content" align="center">	 
+      <img src="imagenes/tienda3.PNG" width="100" height="100" > <br>
+      Fachada de nuestra tienda  <br>
+      En la cidudad de puebla<br>
+   </div>
+
+     <a href="#contacto">Contacto</a>
+	
+</div>
+
+
+<!-- pagina de NUEVOS PRODUCTOS -->
+<div data-role="page" id="newprods">
+
+ 	 <div data-role="header" >
+  		<a href="index.html" data-role="button" data-direction="reverse"
+		data-icon="back" data-iconpos="left">Back</a>
+    	<h1>PRODUCTOS NUEVOS</h1>
+  		</div>
+  
+  <div data-role="content"><center><P id="indica">Desliza para instrucciones de uso del catalogo</P></center>
+       <p><span id="indica1" style="color:red"></span></p>
+       <p><span id="indica2" style="color:blue"></span></p>
+ 
+ <table width="200" border="1">
+  <tr>
+    <td><img src="imagenes/nike1.jpg" width="200" height="200"></td>
+    <td><img src="imagenes/nike2.jpg" width="200" height="200"></td>
+    <td><img src="imagenes/jordan5.jpg" width="200" height="200"></td>
+  </tr>
+  <tr>
+    <td><center><P id="pren1">$</P></center> <center><P id="des1">DESC.</P></center></td>
+    <td><center><P id="pren2">$</P></center> <center><P id="des2">DESC.</P></center></td>
+    <td><center><P id="pren3">$</P></center> <center><P id="des3">DESC.</P></center></td>
+  </tr>
+  <tr>
+    <td><center><p id="espe1">******</p></center></td>
+    <td><center><p id="espe3">******</p></center></td>
+    <td><center><p id="espe5">******</p></center></td>
+  </tr>
+  <tr>
+    <td><center><p id="espe2">******</p></center></td>
+    <td><center><p id="espe4">******</p></center></td>
+    <td><center><p id="espe6">******</p></center></td>
+  </tr>
+</table>
+  
+  
+</div>
+</div>
+
+<!-- TERMINA PAGINA de NUEVOS PRODUCTOS -->
+
+
+
+<!--pagina de ayuda-->
+<div data-role="page" id="ayuda" data-theme="b">
+	<div data-role="header">
+     <a href="index.html" data-role="button" data-direction="reverse"
+data-icon="back" data-iconpos="left">Back</a>
+		<h1>Acerca de </h1>
+	</div>
+	<div data-role="content" align="center">	 
+    <img src="imagenes/soportechat.png" width="200" height="200" > <br>
+	Si tiene alguna duda puede comunicarse en nuestro chat on line !!!! <br>
+   GRACIAS	<br>
+  
+  
+  <div data-role="controlgroup" data-type="horizontal">
+  <!--div para grupo de controles con data div -->
+   <p>Catalogo de nuestras principales marcas</p>
+   <a href="#jordan" class="ui-btn">Jordan</a>
+   <a href="#adidas" class="ui-btn">Adidas </a>
+   <a href="#nike" class="ui-btn"> Nike</a>
+  </div>
+  
+ <a href="#asesoria">Ventana de chat </a>
+   
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar" data-iconpos="top">
+       		<ul>
+             	<li>
+                	<a href="#inicio" data-transition="slide" data-icon="home">
+                    Inicio
+                    </a>
+                </li>
+                <li>
+                	<a href="#ayuda" data-transition="slide" data-icon="info">
+                   Ayuda
+                    </a>
+                </li>
+                <li>
+                	<a href="#contacto" data-transition="slide" data-icon="alert">
+                    CONTACTO
+                    </a>
+                </li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+</body>
+</html>
