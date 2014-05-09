@@ -18,7 +18,7 @@ $(document).on("pagecreate",function(event){
     }
     else
     {
-    $(document).on("pagecreate",function(event){
+    $(document).on("pagecreate","#inicio",function(event){
 	$("#indica3").text("MR. X");	
     	$("#indica4").text("SU MEJOR OPCIÓN");
 		 
